@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+import HeaderTitle from "./components/HeaderTitle.vue";
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="SURE" />
+      <HeaderTitle />
 
-      <nav>
+      <nav class="w-full text-center mt-4">
         <RouterLink to="/">목록</RouterLink>
         <RouterLink to="/about">통계</RouterLink>
       </nav>
@@ -21,23 +21,10 @@ import HelloWorld from "./components/HelloWorld.vue";
 <style scoped>
 header {
   line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  @apply underline;
 }
 
 nav a.router-link-exact-active:hover {
@@ -54,7 +41,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -78,6 +65,6 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
-  }
-}
+  } */
+/* } */
 </style>
