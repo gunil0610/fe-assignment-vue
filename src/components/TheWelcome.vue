@@ -70,8 +70,8 @@ function onChangeInput(event: Event) {
     />
   </div>
 
-  <!-- Add button -->
-  <div class="w-full">
+  <div class="w-full flex flex-col gap-4">
+    <!-- TODO: 컴포넌트화 -->
     <div
       v-if="onEdit"
       class="w-full flex flex-col gap-4 p-6 bg-zinc-100 rounded-xl"
@@ -127,7 +127,24 @@ function onChangeInput(event: Event) {
         >
       </div>
     </div>
+
+    <!-- Add button -->
     <Button v-else class="w-full py-6" @click="toggleOnEdit">+</Button>
+
+    <!-- vuex에 todo 저장후 v-for 으로 리스트 렌더링, isEditing 여부에 따라 다르게 표시 -->
+    <div class="w-full flex flex-col gap-4 p-6 bg-zinc-100 rounded-xl">
+      <div class="flex justify-between">
+        <h3 class="text-xl">Title</h3>
+        <p>CreatedAt</p>
+      </div>
+      <div class="flex justify-between">
+        <p>Description</p>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-600" />
+          <p>Status</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- TODOS  -->
